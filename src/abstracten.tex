@@ -1,0 +1,36 @@
+\begin{otherlanguage}{english}
+	\chapter*{\abstractname}
+	\addcontentsline{toc}{chapter}{\abstractname}
+	Cloud computing has been established as the dominant approach to compute
+	infrastructure. The multitude of services it offers is grounded in
+	virtualization technology. As cloud adoption grows worldwide, the expansion
+	of its compute resources renders their efficient utilization by software
+	imperative. One solution towards that is \emph{unikernels}, operating system
+	kernels specialized to run a single instance of a single application at a
+	time, sparing resources compared to a general-purpose kernel. As such,
+	they have an advantage over general-purpose operating systems as far as
+	resource efficiency is concerned, while also providing stronger isolation
+	than containers, a more recent, popular alternative.
+
+	Efficient while also secure virtualized guests' access to the underlying
+	host's resources is a substantial challenge that comes with virtualization.
+	In this aspect, \emph{virtio} has been a significant contribution, as a
+	specification of paravirtual devices enabling efficient usage of the host's
+	resources. For host-guest file sharing, until recently the solutions
+	available relied on the virtual network connection between the two, with
+	suboptimal results, since their colocation on the same physical machine was
+	exploited. To address this issue, \emph{virtio-fs} has been proposed, as a
+	virtio device offering guest access to a file system directory on the host,
+	providing high performance and local file system semantics.
+
+	This thesis is concerned with the implementation and evaluation of virtio-fs
+	in a unikernel. We demonstrate that combining the two offers great benefits,
+	both with regard to performance and the operational aspect in a cloud
+	context. Moreover, we cater to the practical value of this work by
+	contributing it to the open source project behind the unikernel we based it
+	on.
+
+	\section*{Keywords}
+	\noindent
+	virtualization, cloud, file system, unikernel, virtio, OSv, virtio-fs, QEMU
+\end{otherlanguage}

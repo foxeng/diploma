@@ -1,0 +1,166 @@
+\documentclass[12pt, a4paper, notitlepage]{report}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage[utf8]{inputenc}
+\usepackage[T1, LGR]{fontenc}
+\usepackage[english, greek]{babel}
+
+\newcommand{\en}[1]{\foreignlanguage{english}{#1}}
+\newcommand{\blankpage}{\newpage\null\thispagestyle{empty}\newpage}
+
+\begin{document}
+
+\title{
+	\vspace*{-8ex}
+	\begin{center}
+		\includegraphics[scale=0.4]{img/pyrforos.eps}
+	\end{center}
+	\Large{Ε}\large{ΘΝΙΚΟ}
+	\Large{Μ}\large{ΕΤΣΟΒΙΟ}
+	\Large{Π}\large{ΟΛΥΤΕΧΝΕΙΟ} \\
+	\normalsize{Σ}\small{ΧΟΛΗ}
+	\normalsize{Η}\small{ΛΕΚΤΡΟΛΟΓΩΝ}
+	\normalsize{Μ}\small{ΗΧΑΝΙΚΩΝ}
+	\normalsize{Κ}\small{ΑΙ}
+	\normalsize{Μ}\small{ΗΧΑΝΙΚΩΝ}
+	\normalsize{Υ}\small{ΠΟΛΟΓΙΣΤΩΝ} \\
+	\vspace{2ex}
+	\normalsize{Τ}\small{ΟΜΕΑΣ}
+	\normalsize{Τ}\small{ΕΧΝΟΛΟΓΙΑΣ}
+	\normalsize{Π}\small{ΛΗΡΟΦΟΡΙΚΗΣ}
+	\normalsize{Κ}\small{ΑΙ}
+	\normalsize{Υ}\small{ΠΟΛΟΓΙΣΤΩΝ} \\
+	\vspace{14ex}
+	\large\textbf{Κοινόχρηστο με τον \en{host} σύστημα αρχείων σε \en{unikernel}} \\
+	\vspace{14ex}
+	\largeΔΙΠΛΩΜΑΤΙΚΗ ΕΡΓΑΣΙΑ \\
+	\vspace{1ex}
+	\center\textbf{Φώτιος Ζαφείρης Μ. Ξενάκης}
+	\vfill
+	\begin{tabbing}
+		\normalsize
+		\textbf{Επιβλέπων}: \= Νεκτάριος Κοζύρης \\
+							\> Καθηγητής Ε.Μ.Π.
+	\end{tabbing}
+}
+\author{}	% NOTE: Just to silence the warning about missing \author
+\date{
+	\normalsizeΑθήνα, Οκτώβριος 2020
+}
+\maketitle
+\thispagestyle{empty}
+
+\blankpage
+
+\vspace*{-8ex}
+\noindent
+\begin{minipage}{3.0cm}
+	\includegraphics[height=2.5cm]{img/pyrforos}
+\end{minipage}
+\begin{minipage}{12.0cm}
+	Εθνικό Μετσόβιο Πολυτεχνείο \\[3pt]
+	Σχολή Ηλεκτρολόγων Μηχανικών και Μηχανικών Υπολογιστών \\[3pt]
+	Τομέας Τεχνολογίας Πληροφορικής και Υπολογιστών
+\end{minipage}
+\vspace{14ex}
+\begin{center}
+	\large\textbf{Κοινόχρηστο με τον \en{host} σύστημα αρχείων σε \en{unikernel}} \\
+	\vspace{14ex}
+	\largeΔΙΠΛΩΜΑΤΙΚΗ ΕΡΓΑΣΙΑ \\
+	\vspace{1ex}
+	\center\textbf{Φώτιος Ζαφείρης Μ. Ξενάκης}
+\end{center}
+\vfill
+\begin{tabbing}
+	\normalsize
+	\textbf{Επιβλέπων}: \= Νεκτάριος Κοζύρης \\
+						\> Καθηγητής Ε.Μ.Π.
+\end{tabbing}
+\vspace{4ex}
+Εγκρίθηκε από την τριμελή εξεταστική επιτροπή την -TODO: ημερομηνία-.
+\vspace{4ex}
+\begin{center}
+	\scriptsize
+	\parbox[b]{0.3\textwidth} {
+		\center
+		........................................ \\
+		Νεκτάριος Κοζύρης \\
+		Καθηγητής Ε.Μ.Π.
+	}
+	\parbox[b]{0.3\textwidth} {
+		\center
+		........................................ \\
+		Γεώργιος Γκούμας \\
+		Επίκουρος καθηγητής Ε.Μ.Π.
+	}
+	\parbox[b]{0.3\textwidth} {
+		\center
+		........................................ \\
+		Διονύσιος Πνευματικάτος \\
+		Καθηγητής Ε.Μ.Π.
+	}
+\end{center}
+\vspace{2ex}
+\begin{center}
+	\normalsize
+	Αθήνα, Οκτώβριος 2020
+\end{center}
+\thispagestyle{empty}
+
+\newpage
+\vspace*{14ex}
+\noindent
+................................... \\
+\textbf{Φώτιος Ζαφείρης Μ. Ξενάκης} \\
+Διπλωματούχος Ηλεκτρολόγος Μηχανικός και Μηχανικός Υπολογιστών Ε.Μ.Π. \\
+\vfill
+\small
+\noindent
+\en{Copyright} \copyright\ Φώτιος Ζαφείρης Ξενάκης, 2020. \\
+Με επιφύλαξη παντός δικαιώματος. \en{All rights reserved.}
+
+\vspace{2ex}
+\noindent
+Απαγορεύεται η αντιγραφή, αποθήκευση και διανομή της παρούσας εργασίας, εξ
+ολοκλήρου ή τμήματος αυτής, για εμπορικό σκοπό. Επιτρέπεται η ανατύπωση,
+αποθήκευση και διανομή για σκοπό μη κερδοσκοπικό, εκπαιδευτικής ή ερευνητικής
+φύσης, υπό την προϋπόθεση να αναφέρεται η πηγή προέλευσης και να διατηρείται το
+παρόν μήνυμα. Ερωτήματα που αφορούν τη χρήση της εργασίας για κερδοσκοπικό σκοπό
+πρέπει να απευθύνονται προς τον συγγραφέα.
+
+\noindent
+Οι απόψεις και τα συμπεράσματα που περιέχονται σε αυτό το έγγραφο εκφράζουν τον
+συγγραφέα και δεν πρέπει να ερμηνευθεί ότι αντιπροσωπεύουν τις επίσημες θέσεις
+του Εθνικού Μετσόβιου Πολυτεχνείου.
+\thispagestyle{empty}
+
+\newpage
+\include{src/abstractgr}
+
+\blankpage
+
+\include{src/abstracten}
+
+\blankpage
+
+\include{src/thanks}
+
+\blankpage
+
+\tableofcontents
+\addcontentsline{toc}{chapter}{\contentsname}
+
+\listoffigures
+\addcontentsline{toc}{chapter}{\listfigurename}
+
+% TODO: Remove if empty
+\listoftables
+\addcontentsline{toc}{chapter}{\listtablename}
+
+\include{src/ch1}
+\include{src/ch2}
+\include{src/ch3}
+\include{src/ch4}
+\include{src/ch5}
+
+\end{document}
