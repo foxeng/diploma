@@ -19,11 +19,11 @@
 	resources. For host-guest file sharing, until recently the solutions
 	available relied on the virtual network connection between the two, with
 	suboptimal results, since their colocation on the same physical machine was
-	exploited. To address this issue, \emph{virtio-fs} has been proposed, as a
+	exploited. To address this issue, \emph{\viofs{}} has been proposed, as a
 	virtio device offering guest access to a file system directory on the host,
 	providing high performance and local file system semantics.
 
-	This thesis is concerned with the implementation and evaluation of virtio-fs
+	This thesis is concerned with the implementation and evaluation of \viofs{}
 	in a unikernel. We demonstrate that combining the two offers great benefits,
 	both with regard to performance and the operational aspect in a cloud
 	context. Moreover, we cater to the practical value of this work by
@@ -32,5 +32,6 @@
 
 	\section*{Keywords}
 	\noindent
-	virtualization, cloud, file system, unikernel, virtio, OSv, virtio-fs, QEMU
+	virtualization, cloud, file system, unikernel, virtio, \osv{}, \viofs{},
+	\qemu{}
 \end{otherlanguage}
