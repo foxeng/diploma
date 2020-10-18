@@ -32,11 +32,12 @@
           Αυτό έγινε με σκοπό την ελαχιστοποίηση των παρεμβολών που θα μπορούσαν
           να επηρεάσουν τις επιδόσεις.
     \item Για τη μέτρηση της χρησιμοποιούμενης επεξεργαστικής ισχύος (\en{CPU
-          usage}) επελέγη το \emph{\en{perf}}. % TODO: cite https://perf.wiki.kernel.org/index.php/Main_Page
-          Συγκεκριμένα, χρησιμοποιήθηκε η εντολή \texttt{\en{perf stat}}, με το
-          \en{``task-clock'' perf event}. Η μέτρηση έγινε για τη διεργασία του
-          \qemu{}, το \en{virtiofsd}, το \en{vhost kernel thread} και τα \en{NFS
-          kernel threads} (για το καθένα όπου ήταν εφαρμόσιμο):
+          usage}) επελέγη το \emph{\en{perf}} \cite{perf}, στην έκδοση
+          5.7.g3d77e6a8804a. Συγκεκριμένα, χρησιμοποιήθηκε η εντολή
+          \texttt{\en{perf stat}}, με το \en{``task-clock'' perf event}. Η
+          μέτρηση έγινε για τη διεργασία του \qemu{}, το \en{virtiofsd}, το
+          \en{vhost kernel thread} και τα \en{NFS kernel threads} (για το καθένα
+          όπου ήταν εφαρμόσιμο):
     \item Όλες οι δοκιμές επαναλήφθηκαν \emph{10 φορές}, από τις οποίες στη
           συνέχεια παρουσιάζονται η μέση τιμή \en{mean} και η τυπική απόκλιση
           \en{standard deviation}. Στην περίπτωση του \osv{} κάθε επανάληψη ήταν
@@ -76,8 +77,7 @@
         \hline
         \en{Linux kernel} & \en{5.8.13-arch1-1} \\
         \hline
-        \qemu{} & \en{5.1.50 @ c37a890d12e57a3d28c3c7ff50ba6b877f6fc2cc} \\
-        % TODO: cite https://gitlab.com/virtio-fs/qemu/-/tree/c37a890d12e57a3d28c3c7ff50ba6b877f6fc2cc
+        \qemu{} & \en{5.1.50 @ c37a890d12e57a3d28c3c7ff50ba6b877f6fc2cc} \cite{virtiofs:qemu} \\
         \hline
     \end{tabular}
     \caption{Προδιαγραφές του \host{} όπου διεξήχθησαν οι δοκιμές.}
@@ -94,11 +94,9 @@
         \hline
         \en{DAX window} & 4 \en{GiB} \\
         \hline
-        \osv{} & \en{5372a230ce0abf0dc72e92ec1116208145e595c5} \\
-        % TODO: cite https://github.com/cloudius-systems/osv/tree/5372a230ce0abf0dc72e92ec1116208145e595c5
+        \osv{} & \en{5372a230ce0abf0dc72e92ec1116208145e595c5} \cite{osv-repo} \\
         \hline
-        \en{Linux kernel} & \en{5.8.0-rc4-33261-gfaa931f16f27} \\
-        % TODO: cite https://gitlab.com/virtio-fs/linux/-/tree/faa931f16f27d37a1b688d6129cf70b801a81506
+        \en{Linux kernel} & \en{5.8.0-rc4-33261-gfaa931f16f27} \cite{virtiofs:linux} \\
         \hline
     \end{tabular}
     \caption{Προδιαγραφές των \en{guests}.}
@@ -108,9 +106,8 @@
 \section{\en{Microbenchmark}}
 \subsection{Περιγραφή}
 Για τη μέτρηση των επιδόσεων του συστήματος αρχείων χρησιμοποιήσαμε το
-\en{flexible I/O tester (fio)} % TODO: cite https://github.com/axboe/fio
-στην έκδοση 3.23. Προκειμένου να εκτελεστεί στο \osv{} χρειάστηκαν μόνο δύο
-τροποποιήσεις%
+\en{flexible I/O tester (fio)} \cite{fio} στην έκδοση 3.23. Προκειμένου να
+εκτελεστεί στο \osv{} χρειάστηκαν μόνο δύο τροποποιήσεις%
 \footnote{Όλες οι αλλαγές βρίσκονται στο ``\en{osv}'' \en{branch} του \en{git
 repository \url{https://github.com/foxeng/fio}}.}
 και τα κατάλληλα ορίσματα στο \en{configure script} του \en{fio} ώστε να
@@ -151,9 +148,11 @@ system}) στο \linux{}, καθώς και το \en{tmpfs} στον \host{}, τ
     \item Σε όλες τις περιπτώσεις υπάρχει μόνο \emph{ένα \en{thread}} ανάγνωσης
           (\texttt{\en{numjobs=1}}).
     \item Στο \linux{}, για την αυτοματοποίηση των δοκιμών βασιστήκαμε στο
-          σχετικό βοήθημα του \en{Vivek Goyal}. % TODO: cite https://github.com/rhvgoyal/virtiofs-tests
-          Αξίζει να σημειωθεί ότι το συγκεκριμένο ακυρώνει τις \en{page, inode}
-          και \en{dentry caches} χρησιμοποιώντας το \en{sysctl} \\
+          σχετικό βοήθημα του \en{Vivek Goyal}%
+          \footnote{\en{commit hash 8c99f50c878cb39db76abec7e0882fd83c99f4b3}}
+          \cite{virtiofs-tests}. Αξίζει να σημειωθεί ότι το συγκεκριμένο
+          ακυρώνει τις \en{page, inode} και \en{dentry caches} χρησιμοποιώντας
+          το \en{sysctl} \\
           (\en{/proc/sys/vm/drop\_caches}) % ref https://www.kernel.org/doc/html/latest/admin-guide/sysctl/vm.html
           πριν από κάθε εκτέλεση του \en{fio}.
     \item Στην περίπτωση του \linux{} (\guest{} και \host{}) δεν έγινε μέτρηση
@@ -296,9 +295,9 @@ system}) στο \linux{}, καθώς και το \en{tmpfs} στον \host{}, τ
 \section{Χρόνος εκκίνησης}
 \subsection{Περιγραφή}
 Προκειμένου να αξιολογήσουμε τον χρόνο εκκίνησης στο \viofs{} επιλέξαμε μία
-εφαρμογή από αυτές που έχουν ήδη μεταφερθεί στο \osv{} ως παραδείγματα. % TODO: cite https://github.com/cloudius-systems/osv-apps
-Συγκεκριμένα, επελέγη το \en{spring-boot-example}, μια απλή \en{web} εφαρμογή
-από το % TODO: cite https://github.com/in28minutes/spring-boot-examples
+εφαρμογή από αυτές που έχουν ήδη μεταφερθεί στο \osv{} ως παραδείγματα
+\cite{osv-apps}. Συγκεκριμένα, επελέγη το \en{spring-boot-example}, μια απλή
+\en{web} εφαρμογή από το \cite{spring-boot-examples}
 χτισμένη με το \en{spring boot framework}, % ref https://spring.io/projects/spring-boot
 στην έκδοση του 2.3.4.%
 \footnote{Όλες οι αλλαγές που έγιναν για τις δοκιμές μας βρίσκονται στο
@@ -382,23 +381,21 @@ system}) στο \linux{}, καθώς και το \en{tmpfs} στον \host{}, τ
 \emph{ταυτίζεται} με το \en{boot file system} (σε ορολογία \osv{}, το αντίστοιχο
 \en{initramfs} στο \linux{}). Αυτό είναι μέρος του \en{ELF object} που περιέχει
 το \en{kernel}, το οποίο φορτώνεται και αποσυμπιέζεται κατά τα πρώιμα στάδια του
-\en{boot}, % TODO: cite https://github.com/cloudius-systems/osv/wiki/OSv-early-boot-(MBR)
-σε μια διαδικασία με χαμηλό \en{throughput}, λόγω του περιορισμένου αρχικού
-περιβάλλοντος. Έτσι, όταν στην περίπτωση του \en{ramfs}, το εν λόγω \en{ELF
-object} είναι έως και μία τάξη μεγέθους μεγαλύτερο από τα υπόλοιπα, αυτό
-είναι υπαίτιο για την αύξηση του χρόνου εκκίνησης. Βέβαια, εν προκειμένω έχουμε
-κάνει κατάχρηση του \en{ramfs}, το οποίο δεν είναι προορισμένο για τόσο μεγάλα
-\en{images}.
+\en{boot} \cite{osv-wiki}, σε μια διαδικασία με χαμηλό \en{throughput}, λόγω του
+περιορισμένου αρχικού περιβάλλοντος. Έτσι, όταν στην περίπτωση του \en{ramfs},
+το εν λόγω \en{ELF object} είναι έως και μία τάξη μεγέθους μεγαλύτερο από τα
+υπόλοιπα, αυτό είναι υπαίτιο για την αύξηση του χρόνου εκκίνησης. Βέβαια, εν
+προκειμένω έχουμε κάνει κατάχρηση του \en{ramfs}, το οποίο δεν είναι προορισμένο
+για τόσο μεγάλα \en{images}.
 
 \section{\en{Application benchmark}}
 \subsection{Περιγραφή}
 Για να αξιολογήσουμε το \viofs{} με όρους μιας ολοκληρωμένης, πραγματικής
 εφαρμογής επιλέξαμε και πάλι από το πεδίο των \en{stateless} εφαρμογών σε
 πλαίσιο \en{cloud} το σενάριο ενός στατικού \en{web} εξυπηρετητή (\en{server}).
-Συγκεκριμένα, χρησιμοποιήσαμε τον \en{nginx} % TODO: cite http://nginx.org/
-(στην έκδοση του 1.19.2), έναν από τους πλέον δημοφιλείς \en{web servers}
-ελεύθερου λογισμικού, ο οποίος είναι επίσης διαθέσιμος στη συλλογή εφαρμογών του
-\osv{}.%
+Συγκεκριμένα, χρησιμοποιήσαμε τον \en{nginx} \cite{nginx} (στην έκδοση του
+1.19.2), έναν από τους πλέον δημοφιλείς \en{web servers} ελεύθερου λογισμικού, ο
+οποίος είναι επίσης διαθέσιμος στη συλλογή εφαρμογών του \osv{}.%
 \footnote{Όλες οι αλλαγές που έγιναν για τις δοκιμές μας βρίσκονται στο
 ``\en{virtiofs-tests}'' \en{branch} του \en{git repository
 \url{https://github.com/foxeng/osv-apps}}.}
@@ -422,9 +419,9 @@ object} είναι έως και μία τάξη μεγέθους μεγαλύτ
 
 Για την διεξαγωγή των δοκιμών, που είχαν τη μορφή δοκιμών φορτίου \en{HTTP}
 (\en{HTTP load tests}), από τη μεριά του πελάτη (\en{HTTP client})
-χρησιμοποιήσαμε το \en{vegeta}, % TODO: cite https://github.com/tsenart/vegeta
-ένα δημοφιλές εργαλείο γι' αυτό το σκοπό, στην έκδοση του 12.8.3. Η διαδικασία
-(αυτοματοποιημένη από το \en{script} ενορχήστρωσης) είχε ως εξής:
+χρησιμοποιήσαμε το \en{vegeta} \cite{vegeta}, ένα δημοφιλές εργαλείο γι' αυτό το
+σκοπό, στην έκδοση του 12.8.3. Η διαδικασία (αυτοματοποιημένη από το \en{script}
+ενορχήστρωσης) είχε ως εξής:
 \begin{enumerate}
     \item Αρχικά εκκινούνταν ο \osv{} \guest{}, στον οποίο δίνονταν ένα
           δευτερόλεπτο περιθώριο προκειμένου να ολοκληρωθεί η αρχικοποίηση του
