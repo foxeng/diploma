@@ -1,7 +1,11 @@
 \documentclass[12pt, a4paper, notitlepage]{report}
 \usepackage{indentfirst}
+\usepackage{microtype}
+\usepackage{listings}
+\usepackage{xcolor}
 \usepackage{graphicx}
 \graphicspath{ {./img/} }
+\usepackage{caption}
 \usepackage{subcaption}
 \usepackage[unicode]{hyperref}
 \usepackage[fixlanguage]{babelbib}
@@ -9,7 +13,11 @@
 \usepackage[T1, LGR]{fontenc}
 \usepackage[english, greek]{babel}
 
+% Number subsubsections too (but don't include them in the toc)
+\setcounter{secnumdepth}{3}
+
 \newcommand{\en}[1]{\foreignlanguage{english}{#1}}
+\newcommand{\gr}[1]{\foreignlanguage{greek}{#1}}
 \newcommand{\blankpage}{\newpage\null\thispagestyle{empty}\newpage}
 \newcommand{\osv}{\en{OSv}}
 \newcommand{\viofs}{\en{virtio-fs}}
@@ -17,6 +25,9 @@
 \newcommand{\linux}{\en{linux}}
 \newcommand{\host}{\en{host}}
 \newcommand{\guest}{\en{guest}}
+
+% Provide a Greek translation for "Listing" (the listings package doesn't)
+\renewcommand{\lstlistingname}{\gr{Κώδικας}}
 
 \begin{document}
 
@@ -171,6 +182,9 @@
 \include{src/ch3}
 \include{src/ch4}
 \include{src/ch5}
+
+\appendix
+\include{src/app1}
 
 \bibliographystyle{babplain}
 \bibliography{main}
