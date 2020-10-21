@@ -1,19 +1,29 @@
 \documentclass[12pt, a4paper, notitlepage]{report}
 \usepackage{indentfirst}
 \usepackage{graphicx}
+\graphicspath{ {./img/} }
+\usepackage{subcaption}
+\usepackage[unicode]{hyperref}
+\usepackage[fixlanguage]{babelbib}
 \usepackage[utf8]{inputenc}
 \usepackage[T1, LGR]{fontenc}
 \usepackage[english, greek]{babel}
 
 \newcommand{\en}[1]{\foreignlanguage{english}{#1}}
 \newcommand{\blankpage}{\newpage\null\thispagestyle{empty}\newpage}
+\newcommand{\osv}{\en{OSv}}
+\newcommand{\viofs}{\en{virtio-fs}}
+\newcommand{\qemu}{\en{QEMU}}
+\newcommand{\linux}{\en{linux}}
+\newcommand{\host}{\en{host}}
+\newcommand{\guest}{\en{guest}}
 
 \begin{document}
 
 \title{
 	\vspace*{-8ex}
 	\begin{center}
-		\includegraphics[scale=0.4]{img/pyrforos.eps}
+		\includegraphics[scale=0.4]{pyrforos.eps}
 	\end{center}
 	\Large{Ε}\large{ΘΝΙΚΟ}
 	\Large{Μ}\large{ΕΤΣΟΒΙΟ}
@@ -31,7 +41,7 @@
 	\normalsize{Κ}\small{ΑΙ}
 	\normalsize{Υ}\small{ΠΟΛΟΓΙΣΤΩΝ} \\
 	\vspace{14ex}
-	\large\textbf{Κοινόχρηστο με τον \en{host} σύστημα αρχείων σε \en{unikernel}} \\
+	\large\textbf{Κοινόχρηστο με τον \host{} σύστημα αρχείων σε \en{unikernel}} \\
 	\vspace{14ex}
 	\largeΔΙΠΛΩΜΑΤΙΚΗ ΕΡΓΑΣΙΑ \\
 	\vspace{1ex}
@@ -55,7 +65,7 @@
 \vspace*{-8ex}
 \noindent
 \begin{minipage}{3.0cm}
-	\includegraphics[height=2.5cm]{img/pyrforos}
+	\includegraphics[height=2.5cm]{pyrforos}
 \end{minipage}
 \begin{minipage}{12.0cm}
 	Εθνικό Μετσόβιο Πολυτεχνείο \\[3pt]
@@ -64,7 +74,7 @@
 \end{minipage}
 \vspace{14ex}
 \begin{center}
-	\large\textbf{Κοινόχρηστο με τον \en{host} σύστημα αρχείων σε \en{unikernel}} \\
+	\large\textbf{Κοινόχρηστο με τον \host{} σύστημα αρχείων σε \en{unikernel}} \\
 	\vspace{14ex}
 	\largeΔΙΠΛΩΜΑΤΙΚΗ ΕΡΓΑΣΙΑ \\
 	\vspace{1ex}
@@ -153,7 +163,6 @@
 \listoffigures
 \addcontentsline{toc}{chapter}{\listfigurename}
 
-% TODO: Remove if empty
 \listoftables
 \addcontentsline{toc}{chapter}{\listtablename}
 
@@ -162,5 +171,8 @@
 \include{src/ch3}
 \include{src/ch4}
 \include{src/ch5}
+
+\bibliographystyle{babplain}
+\bibliography{main}
 
 \end{document}
