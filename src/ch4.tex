@@ -150,9 +150,8 @@ system}) στο \linux{}, καθώς και το \en{tmpfs} στον \host{}, τ
     \item Στο \linux{}, για την αυτοματοποίηση των δοκιμών βασιστήκαμε στο
           σχετικό βοήθημα του \en{Vivek Goyal}%
           \footnote{\en{commit hash 8c99f50c878cb39db76abec7e0882fd83c99f4b3}}
-          \cite{virtiofs-tests}. Αξίζει να σημειωθεί ότι το συγκεκριμένο
-          ακυρώνει τις \en{page, inode} και \en{dentry caches} χρησιμοποιώντας
-          το \en{sysctl} \\
+          \cite{virtiofs-tests}. Το συγκεκριμένο ακυρώνει τις \en{page, inode}
+          και \en{dentry caches} χρησιμοποιώντας το \en{sysctl}
           (\en{/proc/sys/vm/drop\_caches}) % ref https://www.kernel.org/doc/html/latest/admin-guide/sysctl/vm.html
           πριν από κάθε εκτέλεση του \en{fio}.
     \item Στην περίπτωση του \linux{} (\guest{} και \host{}) δεν έγινε μέτρηση
