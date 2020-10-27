@@ -36,8 +36,8 @@
           5.7.g3d77e6a8804a. Συγκεκριμένα, χρησιμοποιήθηκε η εντολή
           \texttt{\en{perf stat}}, με το \en{``task-clock'' perf event}. Η
           μέτρηση έγινε για τη διεργασία του \qemu{}, το \en{virtiofsd}, το
-          \en{vhost kernel thread} και τα \en{NFS kernel threads} (για το καθένα
-          όπου ήταν εφαρμόσιμο):
+          \en{vhost kernel thread} \cite{stfanha:vhost} και τα \en{NFS kernel
+          threads} (για το καθένα όπου ήταν εφαρμόσιμο).
     \item Όλες οι δοκιμές επαναλήφθηκαν \emph{10 φορές}, από τις οποίες στη
           συνέχεια παρουσιάζονται η μέση τιμή \en{mean} και η τυπική απόκλιση
           \en{standard deviation}. Στην περίπτωση του \osv{} κάθε επανάληψη ήταν
@@ -45,7 +45,7 @@
           επαναλήψεις έγιναν στην ίδια εκτέλεση της εικονικής μηχανής.
     \item Το \en{virtiofsd} εκτελούνταν με το \en{cache mode} απενεργοποιημένο
           (\texttt{\en{cache=none}}) και ένα \en{thread}
-          (\texttt{\en{--thread-pool-size=1}}). Το δεύτερο επελέγη διότι
+          (\texttt{\en{-{}-thread-pool-size=1}}). Το δεύτερο επελέγη διότι
           οδηγούσε σε ελαφρώς πιο συνεπείς μετρήσεις, χωρίς όμως να παρατηρείται
           καλύτερη επίδοση όπως είχε αναφερθεί σε συζήτηση στη \en{mailing list}
           του \viofs{}%
@@ -150,9 +150,8 @@ system}) στο \linux{}, καθώς και το \en{tmpfs} στον \host{}, τ
     \item Στο \linux{}, για την αυτοματοποίηση των δοκιμών βασιστήκαμε στο
           σχετικό βοήθημα του \en{Vivek Goyal}%
           \footnote{\en{commit hash 8c99f50c878cb39db76abec7e0882fd83c99f4b3}}
-          \cite{virtiofs-tests}. Αξίζει να σημειωθεί ότι το συγκεκριμένο
-          ακυρώνει τις \en{page, inode} και \en{dentry caches} χρησιμοποιώντας
-          το \en{sysctl} \\
+          \cite{virtiofs-tests}. Το συγκεκριμένο ακυρώνει τις \en{page, inode}
+          και \en{dentry caches} χρησιμοποιώντας το \en{sysctl}
           (\en{/proc/sys/vm/drop\_caches}) % ref https://www.kernel.org/doc/html/latest/admin-guide/sysctl/vm.html
           πριν από κάθε εκτέλεση του \en{fio}.
     \item Στην περίπτωση του \linux{} (\guest{} και \host{}) δεν έγινε μέτρηση
@@ -381,12 +380,12 @@ system}) στο \linux{}, καθώς και το \en{tmpfs} στον \host{}, τ
 \emph{ταυτίζεται} με το \en{boot file system} (σε ορολογία \osv{}, το αντίστοιχο
 \en{initramfs} στο \linux{}). Αυτό είναι μέρος του \en{ELF object} που περιέχει
 το \en{kernel}, το οποίο φορτώνεται και αποσυμπιέζεται κατά τα πρώιμα στάδια του
-\en{boot} \cite{osv-wiki}, σε μια διαδικασία με χαμηλό \en{throughput}, λόγω του
-περιορισμένου αρχικού περιβάλλοντος. Έτσι, όταν στην περίπτωση του \en{ramfs},
-το εν λόγω \en{ELF object} είναι έως και μία τάξη μεγέθους μεγαλύτερο από τα
-υπόλοιπα, αυτό είναι υπαίτιο για την αύξηση του χρόνου εκκίνησης. Βέβαια, εν
-προκειμένω έχουμε κάνει κατάχρηση του \en{ramfs}, το οποίο δεν είναι προορισμένο
-για τόσο μεγάλα \en{images}.
+\en{boot} \cite{osv-wiki:early-boot}, σε μια διαδικασία με χαμηλό
+\en{throughput}, λόγω του περιορισμένου αρχικού περιβάλλοντος. Έτσι, όταν στην
+περίπτωση του \en{ramfs}, το εν λόγω \en{ELF object} είναι έως και μία τάξη
+μεγέθους μεγαλύτερο από τα υπόλοιπα, αυτό είναι υπαίτιο για την αύξηση του
+χρόνου εκκίνησης. Βέβαια, εν προκειμένω έχουμε κάνει κατάχρηση του \en{ramfs},
+το οποίο δεν είναι προορισμένο για τόσο μεγάλα \en{images}.
 
 \section{\en{Application benchmark}}
 \subsection{Περιγραφή}
