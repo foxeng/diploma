@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="400" height="340">
+
+<style type="text/css">
+text {font-family:Liberation Sans,sans-serif;}
+text.title {font-size:25px;text-anchor:middle;}
+text.desc {font-size:16px;text-anchor:middle;text-align:center;}
+text.head {fill:#fff;font-size:13px;text-anchor:middle;text-align:center;}
+</style>
+
+<rect width="400" height="70" x="0" y="270" style="fill:#217867;" />
+<rect width="400" height="70" x="0" y="200" style="fill:#2ca089;" />
+<rect width="400" height="70" x="0" y="130" style="fill:#5fd3bc;" />
+<rect width="350" height="70" x="50" y="0" style="fill:#afe9dd;" />
+<rect width="50" height="210" x="0" y="130" style="opacity:0.5;fill:#000;" />
+
+<text class="title" y="25" x="225"><tspan>Cloud Clients</tspan></text>
+<text class="title" y="155" x="225"><tspan>SaaS</tspan></text>
+<text class="title" y="225" x="225"><tspan>PaaS</tspan></text>
+<text class="title" y="295" x="225"><tspan>IaaS</tspan></text>
+
+<text class="desc" y="45" x="225"><tspan>Web browser, mobile app, thin client, terminal</tspan><tspan x="225" dy="20">emulator, ...</tspan></text>
+<text class="desc" y="175" x="225"><tspan>CRM, Email, virtual desktop, communication,</tspan><tspan x="225" dy="20">games, ...</tspan></text>
+<text class="desc" y="245" x="225"><tspan>Execution runtime, database, web server,</tspan><tspan x="225" dy="20">development tools, ...</tspan></text>
+<text class="desc" y="315" x="225"><tspan>Virtual machines, servers, storage, load</tspan><tspan x="225" dy="20">balancers, network, ...</tspan></text>
+
+<text class="head" y="28" x="34" transform="rotate(-90 100 100)"><tspan>Application</tspan></text>
+<text class="head" y="28" x="-36" transform="rotate(-90 100 100)"><tspan>Platform</tspan></text>
+<text class="head" y="20" x="-105" transform="rotate(-90 100 100)"><tspan>Infra-</tspan><tspan x="-105" dy="15">structure</tspan></text>
+
+<polygon fill="#333" points="225,75 245,90 237,90 237,110 245,110 225,125 205,110 213,110 213,90 205,90"/>
+</svg>
