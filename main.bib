@@ -70,11 +70,19 @@ TODO OPT: Switch to biblatex for better multi-lingual handling?
     language = "english",
 }
 
-@misc{stfanha:vhost,
+@misc{stefanha:vhost,
     author = "Stefan Hajnoczi",
     title = "{QEMU Internals: vhost architecture}",
     url = "https://blog.vmsplice.net/2011/09/qemu-internals-vhost-architecture.html",
     note = "accessed 24/10/2020",
+    language = "english",
+}
+
+@misc{stefanha:out-of-process-dev,
+    author = "Stefan Hajnoczi",
+    title = "{Requirements for out-of-process device emulation}",
+    url = "https://blog.vmsplice.net/2020/10/requirements-for-out-of-process-device.html",
+    note = "accessed 30/10/2020",
     language = "english",
 }
 
@@ -99,6 +107,14 @@ TODO OPT: Switch to biblatex for better multi-lingual handling?
     title = "{OSv lzloader and early loader}",
     url = "https://github.com/cloudius-systems/osv/wiki/OSv-lzloader-and-early-loader",
     note = "accessed 24/10/2020",
+    language = "english",
+}
+
+@misc{osv-wiki:debugging,
+    author = "{OSv contributors}",
+    title = "{Debugging OSv}",
+    url = "https://github.com/cloudius-systems/osv/wiki/Debugging-OSv",
+    note = "accessed 30/10/2020",
     language = "english",
 }
 
@@ -130,5 +146,434 @@ TODO OPT: Switch to biblatex for better multi-lingual handling?
     edition = "5.08",
     organization = "The {Linux} man-pages project",
     url = "https://man7.org/linux/man-pages/man2/mmap.2.html",
+    language = "english",
+}
+
+@misc{dpdk,
+    title = "{DPDK website}",
+    url = "https://www.dpdk.org/",
+    note = "accessed 30/10/2020",
+    language = "english",
+}
+
+@misc{spdk,
+    title = "{SPDK website}",
+    url = "https://spdk.io/",
+    note = "accessed 30/10/2020",
+    language = "english",
+}
+
+@misc{virtiofs-website,
+    author = "{virtio-fs contributors}",
+    title = "{virtio-fs website}",
+    url = "https://virtio-fs.gitlab.io/",
+    note = "accessed 30/10/2020",
+    language = "english",
+}
+
+@inproceedings{jitsu,
+    author = {Anil Madhavapeddy and Thomas Leonard and Magnus Skjegstad and Thomas Gazagnaire and David Sheets and Dave Scott and Richard Mortier and Amir Chaudhry and Balraj Singh and Jon Ludlam and Jon Crowcroft and Ian Leslie},
+    title = {Jitsu: Just-In-Time Summoning of Unikernels},
+    booktitle = {12th {USENIX} Symposium on Networked Systems Design and Implementation ({NSDI} 15)},
+    year = {2015},
+    isbn = {978-1-931971-218},
+    address = {Oakland, CA},
+    pages = {559--573},
+    url = {https://www.usenix.org/conference/nsdi15/technical-sessions/presentation/madhavapeddy},
+    publisher = {{USENIX} Association},
+    month = may,
+    language = "english",
+}
+
+@inproceedings{mirageos,
+    author = {Madhavapeddy, Anil and Mortier, Richard and Rotsos, Charalampos and Scott, David and Singh, Balraj and Gazagnaire, Thomas and Smith, Steven and Hand, Steven and Crowcroft, Jon},
+    title = {Unikernels: Library Operating Systems for the Cloud},
+    year = {2013},
+    isbn = {9781450318709},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/2451116.2451167},
+    doi = {10.1145/2451116.2451167},
+    booktitle = {Proceedings of the Eighteenth International Conference on Architectural Support for Programming Languages and Operating Systems},
+    pages = {461–472},
+    numpages = {12},
+    keywords = {hypervisor, functional programming, microkernel},
+    location = {Houston, Texas, USA},
+    series = {ASPLOS '13},
+    language = "english",
+}
+
+@misc{rumprun,
+    author = "{RumpRun contributors}",
+    title = "{RumpRun repository}",
+    url = "https://github.com/rumpkernel/rumprun",
+    language = "english",
+}
+
+@misc{includeos,
+    title = "{IncludeOS website}",
+    url = "https://www.includeos.org/",
+    note = "accessed 30/10/2020",
+    language = "english",
+}
+
+@inproceedings{hermitcore,
+    author = {Lankes, Stefan and Pickartz, Simon and Breitbart, Jens},
+    title = {HermitCore: A Unikernel for Extreme Scale Computing},
+    year = {2016},
+    isbn = {9781450343879},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/2931088.2931093},
+    doi = {10.1145/2931088.2931093},
+    booktitle = {Proceedings of the 6th International Workshop on Runtime and Operating Systems for Supercomputers},
+    articleno = {4},
+    numpages = {8},
+    location = {Kyoto, Japan},
+    series = {ROSS '16},
+    language = "english",
+}
+
+@inproceedings{hermitux,
+    author = {Olivier, Pierre and Chiba, Daniel and Lankes, Stefan and Min, Changwoo and Ravindran, Binoy},
+    title = {A Binary-Compatible Unikernel},
+    year = {2019},
+    isbn = {9781450360203},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3313808.3313817},
+    doi = {10.1145/3313808.3313817},
+    booktitle = {Proceedings of the 15th ACM SIGPLAN/SIGOPS International Conference on Virtual Execution Environments},
+    pages = {59–73},
+    numpages = {15},
+    keywords = {Binary Compatibility. Virtualization, Unikernels, Linux Kernel, Operating Systems},
+    location = {Providence, RI, USA},
+    series = {VEE 2019},
+    language = "english",
+}
+
+@inproceedings{ukl,
+    title={Unikernels: The Next Stage of Linux's Dominance},
+    author={Raza, Ali and Sohal, Parul and Cadden, James and Appavoo, Jonathan and Drepper, Ulrich and Jones, Richard and Krieger, Orran and Mancuso, Renato and Woodman, Larry},
+    booktitle={Proceedings of the Workshop on Hot Topics in Operating Systems},
+    pages={7--13},
+    year={2019},
+    organization={ACM},
+    language = "english",
+}
+
+@misc{toro,
+    title = "{Toro Kernel website}",
+    url = "https://torokernel.io/",
+    note = "accessed 30/10/2020",
+    language = "english",
+}
+
+@misc{nanos,
+    title = "{Nanos website}",
+    url = "https://nanos.org/",
+    note = "accessed 30/10/2020",
+    language = "english",
+}
+
+@inproceedings{virtfs,
+    title={VirtFS - A virtualization aware File System pass-through},
+    author={Jujjuri, Venkateswararao and Van Hensbergen, Eric and Liguori, Anthony and Pulavarty, Badari},
+    booktitle={Proceedings of the Linux Symposium},
+    pages={109--120},
+    year={2010},
+    language = "english",
+}
+
+@misc{9p,
+    title = "{9P website}",
+    url = "http://9p.cat-v.org/",
+    note = "accessed 30/10/2020",
+    language = "english",
+}
+
+@misc{cloud-hypervisor,
+    author = "{Cloud Hypervisor contributors}",
+    title = "{Cloud Hypervisor repository}",
+    url = "https://github.com/cloud-hypervisor/cloud-hypervisor",
+    language = "english",
+}
+
+@misc{memfsd,
+    author = "{Nabla Containers contributors}",
+    title = "{memfsd repository}",
+    url = "https://github.com/nabla-containers/qemu-virtiofs",
+    language = "english",
+}
+
+@inproceedings {firecracker,
+    author = {Alexandru Agache and Marc Brooker and Alexandra Iordache and Anthony Liguori and Rolf Neugebauer and Phil Piwonka and Diana-Maria Popa},
+    title = {Firecracker: Lightweight Virtualization for Serverless Applications },
+    booktitle = {17th {USENIX} Symposium on Networked Systems Design and Implementation ({NSDI} 20)},
+    year = {2020},
+    isbn = {978-1-939133-13-7},
+    address = {Santa Clara, CA},
+    pages = {419--434},
+    url = {https://www.usenix.org/conference/nsdi20/presentation/agache},
+    publisher = {{USENIX} Association},
+    month = feb,
+}
+
+@misc{virtio-windows,
+    author = "{virtio-win contributors}",
+    title = "{virtio-win repository}",
+    url = "https://github.com/virtio-win/kvm-guest-drivers-windows",
+    language = "english",
+}
+
+@misc{cloudflare-serverless,
+    title = "{How are serverless computing and Platform-as-a-Service different?}",
+    url = "https://www.cloudflare.com/learning/serverless/glossary/serverless-vs-paas/",
+    note = "accessed 30/10/2020",
+    language = "english",
+}
+
+@article{serverless,
+    author = {Castro, Paul and Ishakian, Vatche and Muthusamy, Vinod and Slominski, Aleksander},
+    title = {The Rise of Serverless Computing},
+    year = {2019},
+    issue_date = {December 2019},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    volume = {62},
+    number = {12},
+    issn = {0001-0782},
+    url = {https://doi.org/10.1145/3368454},
+    doi = {10.1145/3368454},
+    journal = {Commun. ACM},
+    month = nov,
+    pages = {44–54},
+    numpages = {11},
+    language = "english",
+}
+
+@inproceedings{virtualization-x86,
+    author = {Adams, Keith and Agesen, Ole},
+    title = {A Comparison of Software and Hardware Techniques for X86 Virtualization},
+    year = {2006},
+    isbn = {1595934510},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/1168857.1168860},
+    doi = {10.1145/1168857.1168860},
+    booktitle = {Proceedings of the 12th International Conference on Architectural Support for Programming Languages and Operating Systems},
+    pages = {2–13},
+    numpages = {12},
+    keywords = {virtual machine monitor, dynamic binary translation, x86, MMU, virtualization, nested paging, TLB, SVM, VT},
+    location = {San Jose, California, USA},
+    series = {ASPLOS XII},
+    language = "english",
+}
+
+@inproceedings{osv,
+    author = {Kivity, Avi and Laor, Dor and Costa, Glauber and Enberg, Pekka and Har'El, Nadav and Marti, Don and Zolotarov, Vlad},
+    title = {OSv: Optimizing the Operating System for Virtual Machines},
+    year = {2014},
+    isbn = {9781931971102},
+    publisher = {USENIX Association},
+    address = {USA},
+    booktitle = {Proceedings of the 2014 USENIX Conference on USENIX Annual Technical Conference},
+    pages = {61–72},
+    numpages = {12},
+    location = {Philadelphia, PA},
+    series = {USENIX ATC'14},
+    language = "english",
+}
+
+@techreport{nist-cloud,
+    author = {Mell, Peter M. and Grance, Timothy},
+    title = {SP 800-145. The NIST Definition of Cloud Computing},
+    year = {2011},
+    publisher = {National Institute of Standards & Technology},
+    address = {Gaithersburg, MD, USA},
+    language = "english",
+}
+
+@techreport{spec-serverless,
+    author = {Eismann, Simon and Scheuner, Joel and Eyk, Erwin and Schwinger, Maximilian and Grohmann, Johannes and Herbst, Nikolas and Abad, Cristina and Iosup, Alexandru},
+    year = {2020},
+    month = {05},
+    publisher = {SPEC RG Cloud Working Group},
+    title = {A Review of Serverless Use Cases and their Characteristics SPEC RG Cloud Working Group},
+    language = "english",
+}
+
+@article{popek74,
+    author = {Popek, Gerald J. and Goldberg, Robert P.},
+    title = {Formal Requirements for Virtualizable Third Generation Architectures},
+    year = {1974},
+    issue_date = {July 1974},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    volume = {17},
+    number = {7},
+    issn = {0001-0782},
+    url = {https://doi.org/10.1145/361011.361073},
+    doi = {10.1145/361011.361073},
+    journal = {Commun. ACM},
+    month = jul,
+    pages = {412–421},
+    numpages = {10},
+    keywords = {third generation architecture, virtual machine monitor, virtual memory, formal requirements, operating system, sensitive instruction, proof, hypervisor, abstract model, virtual machine},
+    language = "english",
+}
+
+@inproceedings{xen,
+    author = {Barham, Paul and Dragovic, Boris and Fraser, Keir and Hand, Steven and Harris, Tim and Ho, Alex and Neugebauer, Rolf and Pratt, Ian and Warfield, Andrew},
+    title = {Xen and the Art of Virtualization},
+    year = {2003},
+    isbn = {1581137575},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/945445.945462},
+    doi = {10.1145/945445.945462},
+    abstract = {Numerous systems have been designed which use virtualization to subdivide the ample resources of a modern computer. Some require specialized hardware, or cannot support commodity operating systems. Some target 100% binary compatibility at the expense of performance. Others sacrifice security or functionality for speed. Few offer resource isolation or performance guarantees; most provide only best-effort provisioning, risking denial of service.This paper presents Xen, an x86 virtual machine monitor which allows multiple commodity operating systems to share conventional hardware in a safe and resource managed fashion, but without sacrificing either performance or functionality. This is achieved by providing an idealized virtual machine abstraction to which operating systems such as Linux, BSD and Windows XP, can be ported with minimal effort.Our design is targeted at hosting up to 100 virtual machine instances simultaneously on a modern server. The virtualization approach taken by Xen is extremely efficient: we allow operating systems such as Linux and Windows XP to be hosted simultaneously for a negligible performance overhead --- at most a few percent compared with the unvirtualized case. We considerably outperform competing commercial and freely available solutions in a range of microbenchmarks and system-wide tests.},
+    booktitle = {Proceedings of the Nineteenth ACM Symposium on Operating Systems Principles},
+    pages = {164–177},
+    numpages = {14},
+    keywords = {hypervisors, paravirtualization, virtual machine monitors},
+    location = {Bolton Landing, NY, USA},
+    series = {SOSP '03},
+    language = "english",
+}
+
+@inproceedings{qemu,
+    title={QEMU, a Fast and Portable Dynamic Translator},
+    author={F. Bellard},
+    booktitle={USENIX Annual Technical Conference, FREENIX Track},
+    year={2005},
+    language = "english",
+}
+
+@inproceedings{kvm,
+    author = {Avi Kivity and Yaniv Kamay and Dor Laor and Uri Lublin and Anthony Liguori},
+    title = {kvm: the Linux Virtual Machine Monitor},
+    booktitle = {Proceedings of the 2007 Ottawa Linux Symposium (OLS’-07},
+    pages={225--230},
+    year = {2007},
+    language = "english",
+}
+
+@inproceedings{exokernel,
+    author = {Engler, D. R. and Kaashoek, M. F. and O'Toole, J.},
+    title = {Exokernel: An Operating System Architecture for Application-Level Resource Management},
+    year = {1995},
+    isbn = {0897917154},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/224056.224076},
+    doi = {10.1145/224056.224076},
+    booktitle = {Proceedings of the Fifteenth ACM Symposium on Operating Systems Principles},
+    pages = {251–266},
+    numpages = {16},
+    location = {Copper Mountain, Colorado, USA},
+    series = {SOSP '95},
+    language = "english",
+}
+
+@misc{nfs,
+    author = {Russel Sandberg and David Goldberg and Steve Kleiman and Dan Walsh and Bob Lyon},
+    title = {Design and Implementation or the Sun Network Filesystem},
+    year = {1985}
+}
+
+@misc{wiki:cloud,
+    author = "{Wikipedia contributors}",
+    title = "Cloud computing --- {Wikipedia}{,} The Free Encyclopedia",
+    year = "2020",
+    url = "https://en.wikipedia.org/w/index.php?title=Cloud_computing&oldid=985719602",
+    note = "accessed 30/10/2020",
+    language = "english",
+}
+
+@misc{prex,
+    title = "{Prex website}",
+    url = "http://prex.sourceforge.net/",
+    note = "accessed 30/10/2020",
+    language = "english",
+}
+
+@misc{libnfs,
+    author = "{libnfs contributors}",
+    title = "{libnfs repository}",
+    url = "https://github.com/sahlberg/libnfs",
+    language = "english",
+}
+
+@inproceedings{lightvm,
+    author = {Manco, Filipe and Lupu, Costin and Schmidt, Florian and Mendes, Jose and Kuenzer, Simon and Sati, Sumit and Yasukata, Kenichi and Raiciu, Costin and Huici, Felipe},
+    title = {My VM is Lighter (and Safer) than Your Container},
+    year = {2017},
+    isbn = {9781450350853},
+    publisher = {Association for Computing Machinery},
+    address = {New York, NY, USA},
+    url = {https://doi.org/10.1145/3132747.3132763},
+    doi = {10.1145/3132747.3132763},
+    booktitle = {Proceedings of the 26th Symposium on Operating Systems Principles},
+    pages = {218–233},
+    numpages = {16},
+    keywords = {specialization, unikernels, virtual machine, hypervisor, Xen, operating systems, containers, Virtualization},
+    location = {Shanghai, China},
+    series = {SOSP '17},
+    language = "english",
+}
+
+@misc{docker,
+    title = "{Docker website}",
+    url = "https://www.docker.com/",
+    note = "accessed 30/10/2020",
+    language = "english",
+}
+
+@misc{docker:bind-mounts,
+    title = "{Use bind mounts}",
+    url = "https://docs.docker.com/storage/bind-mounts/",
+    note = "accessed 30/10/2020",
+    language = "english",
+}
+
+@misc{vhost-user,
+    title = "{Vhost-user Protocol}",
+    url = "https://www.qemu.org/docs/master/interop/vhost-user.html",
+    note = "accessed 30/10/2020",
+    language = "english",
+}
+
+@misc{fuse,
+    title = "{FUSE}",
+    url = "https://www.kernel.org/doc/html/latest/filesystems/fuse.html",
+    note = "accessed 30/10/2020",
+    language = "english",
+}
+
+@misc{wiki:hw-virtualization,
+    author = "{Wikipedia contributors}",
+    title = "Hardware virtualization --- {Wikipedia}{,} The Free Encyclopedia",
+    year = "2020",
+    url = "https://en.wikipedia.org/w/index.php?title=Hardware_virtualization&oldid=964209293",
+    note = "accessed 30/10/2020",
+    language = "english",
+}
+
+@misc{wiki:hypervisor,
+    author = "{Wikipedia contributors}",
+    title = "Hypervisor --- {Wikipedia}{,} The Free Encyclopedia",
+    year = "2020",
+    url = "https://en.wikipedia.org/w/index.php?title=Hypervisor&oldid=985571176",
+    note = "accessed 30/10/2020",
+    language = "english",
+}
+
+@misc{wiki:os-level-virtualization,
+    author = "{Wikipedia contributors}",
+    title = "OS-level virtualization --- {Wikipedia}{,} The Free Encyclopedia",
+    year = "2020",
+    url = "https://en.wikipedia.org/w/index.php?title=OS-level_virtualization&oldid=983612845",
+    note = "accessed 30/10/2020",
     language = "english",
 }
