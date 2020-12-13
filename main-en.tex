@@ -1,0 +1,169 @@
+\documentclass[12pt, a4paper, notitlepage]{report}
+\usepackage{indentfirst}
+\usepackage{microtype}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\graphicspath{ {./img/} }
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage[unicode,hidelinks]{hyperref}
+\usepackage[fixlanguage]{babelbib}
+\usepackage[utf8]{inputenc}
+\usepackage[LGR, T1]{fontenc}
+\usepackage[greek, english]{babel}
+
+% Number subsubsections too (but don't include them in the toc)
+\setcounter{secnumdepth}{3}
+
+\newcommand{\blankpage}{\newpage\null\thispagestyle{empty}\newpage}
+\newcommand{\osv}{OSv}
+\newcommand{\viofs}{virtio-fs}
+\newcommand{\qemu}{QEMU}
+
+\begin{document}
+
+\title{
+	\vspace*{-8ex}
+	\begin{center}
+		\includegraphics[scale=0.4]{pyrforos.eps}
+	\end{center}
+	\Large{N}\large{ATIONAL}
+	\Large{T}\large{ECHNICAL}
+	\Large{U}\large{NIVERSITY}
+	\Large{O}\large{F}
+	\Large{A}\large{THENS} \\
+	\normalsize{S}\small{CHOOL}
+	\normalsize{O}\small{F}
+	\normalsize{E}\small{LECTRICAL}
+	\normalsize{A}\small{ND}
+	\normalsize{C}\small{OMPUTER}
+	\normalsize{E}\small{NGINEERING} \\
+	\vspace{2ex}
+	\normalsize{D}\small{IVISION}
+	\normalsize{O}\small{F}
+	\normalsize{C}\small{OMPUTER}
+	\normalsize{S}\small{CIENCE} \\
+	\vspace{14ex}
+	\large\textbf{Efficient file sharing between host and unikernel} \\
+	\vspace{14ex}
+	\large{DIPLOMA THESIS} \\
+	\vspace{1ex}
+	\center\textbf{Fotios Zafeiris M. Xenakis}
+	\vfill
+	\begin{tabbing}
+		\normalsize
+		\textbf{Supervisor}: \= Nectarios Koziris \\
+							 \> Professor, NTUA
+	\end{tabbing}
+}
+\author{}	% NOTE: Just to silence the warning about missing \author
+\date{
+	\normalsize{Athens, October 2020}
+}
+\maketitle
+\thispagestyle{empty}
+
+\blankpage
+
+\vspace*{-8ex}
+\noindent
+\begin{minipage}{3.0cm}
+	\includegraphics[height=2.5cm]{pyrforos}
+\end{minipage}
+\begin{minipage}{12.0cm}
+	National Technical University of Athens \\[3pt]
+	School of Electrical and Computer Engineering \\[3pt]
+	Division of Computer Science
+\end{minipage}
+\vspace{14ex}
+\begin{center}
+	\large\textbf{Efficient file sharing between host and unikernel} \\
+	\vspace{14ex}
+	\large{DIPLOMA THESIS} \\
+	\vspace{1ex}
+	\center\textbf{Fotios Zafeiris M. Xenakis}
+\end{center}
+\vfill
+\begin{tabbing}
+	\normalsize
+	\textbf{Supervisor}: \= Nectarios Koziris \\
+						 \> Professor, NTUA
+\end{tabbing}
+\vspace{4ex}
+Approved by the three-member examining committee on October 30, 2020.
+\vspace{4ex}
+\begin{center}
+	\scriptsize
+	\parbox[b]{0.3\textwidth} {
+		\center
+		........................................ \\
+		Nectarios Koziris \\
+		Professor, NTUA
+	}
+	\parbox[b]{0.3\textwidth} {
+		\center
+		........................................ \\
+		Georgios Goumas \\
+		Assistant professor, NTUA
+	}
+	\parbox[b]{0.3\textwidth} {
+		\center
+		........................................ \\
+		Dionisios Pnevmatikatos \\
+		Professor, NTUA
+	}
+\end{center}
+\vspace{2ex}
+\begin{center}
+	\normalsize
+	Athens, October 2020
+\end{center}
+\thispagestyle{empty}
+
+\newpage
+\vspace*{14ex}
+\noindent
+................................... \\
+\textbf{Fotios Zafeiris M. Xenakis} \\
+Dipl. in Electrical and Computer Engineering, NTUA
+\vfill
+\small
+\noindent
+Copyright \copyright\ Fotios Zafeiris Xenakis, 2020. \\
+All rights reserved.
+
+\thispagestyle{empty}
+
+\newpage
+
+\include{src/abstract-en}
+
+\blankpage
+
+\include{src/thanks-en}
+
+\blankpage
+
+\tableofcontents
+\addcontentsline{toc}{chapter}{\contentsname}
+
+\listoffigures
+\addcontentsline{toc}{chapter}{\listfigurename}
+
+\listoftables
+\addcontentsline{toc}{chapter}{\listtablename}
+
+% \include{src/ch1-en}
+% \include{src/ch2-en}
+% \include{src/ch3-en}
+% \include{src/ch4-en}
+% \include{src/ch5-en}
+
+\appendix
+\include{src/app1-en}
+
+\bibliographystyle{babplain}
+\bibliography{main}
+
+\end{document}
