@@ -1,0 +1,60 @@
+\chapter{Conclusion and future work}
+
+In the context of this thesis we successfully extended the implementation of
+\viofs{} on \osv{} to use the DAX window (only for reading) and to boot with a
+\viofs{} root file system. The former required the addition of a manager for the
+DAX window, in order to achieve efficiency in the presence of multiple mappings.
+In addition, we evaluated our implementation in different scenarios, concluding
+that it significantly enhances \viofs{} performance, making it competitive to
+that of \osv{}'s local file systems in the majority of cases and always superior
+to that of NFS, the only other available shared file system on it. Finally, we
+observed the value of a shared file system in practice, with rebuilding the
+unikernel rendered redundant in most cases of modifications to the application.
+
+The experience of using and developing on \osv{} proved very interesting, with
+some great benefits as well as some points that can be improved. The main
+advantage stems from the usage of C++, in combination with the nature of a
+library OS and the significant work already put into the \osv{} kernel: often
+during development one is under the impression of writing application code
+instead of system code, with amenities like dynamic and semi-automated (through
+smart pointers) memory management and standard libraries available. The unique
+development workflow is also better compared to that of an application on a
+general-purpose operating system, thanks to the short build and startup times.
+Debugging is usually a challenge in unikernels, but in our experience, \osv{}
+offers valuable support for it \cite{osv-wiki:debugging} and of course the
+relative ease of programming aids in avoiding mistakes in the first place.
+Documentation is an area with clear room for improvement, since very often the
+most reliable way to figure out how something works is to read the relevant
+source code, a likely discouraging factor for potential new users. This is of
+course a common problem in software projects with very few contributors and
+requires deliberate effort to change.
+
+% TODO OPT: Unikernels in general (preference and forecast): ecosystem
+% fragmentation, high-level language, ABI compatibility, target platform (light
+% hypervisors), tooling
+
+In the non-technical aspect of the work, we had the opportunity to contribute
+useful additions to a free software project, also coming into contact with and
+becoming members of the communities of two such projects, participating in
+their processes and learning their workflows. This way we accomplished a primary
+goal, that of giving back to the community of the project on which we relied
+upon.
+
+Both the communities we came into contact with, although different in size
+and involvement of most of their members (small and purely voluntary in \osv{},
+larger and professional in \viofs{}), had common core elements. Those were none
+other than openness, welcoming, encouragement and support to new members in
+addition to availability and willingness for collective development through
+discussion, comments, well-intentioned critique and acknowledgement.
+% TODO OPT: Point to discussions on the mailing lists?
+
+As far as extensions of our work on \osv{} are concerned, one that is deemed
+especially interesting is mapping the files in the application's memory via
+\texttt{mmap()}. The challenge in this lies in essentially giving access to the
+DAX window while maintaining \texttt{mmap()} semantics, thus eliminating the
+copy made from the DAX window to the application's buffer necessitated by
+\texttt{read()}. The greatest possible extension at this point is undoubtedly
+write support, with or without the DAX window, to render the file system
+read-write. It is estimated that this would require significant effort to
+tackle adequately, while the value added in \osv{}'s common use cases is not
+convincing of its necessity for now.

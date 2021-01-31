@@ -1,0 +1,109 @@
+\chapter{Introduction}
+
+\section{Motivation}
+
+\subsection{Why unikernels}
+
+This past decade, we have witnessed the domination of the cloud computing model.
+The latter has become a cornerstone in many application fields, enabling
+previously impractical architectures, for a growing number of users. Its broad
+adoption has also led to a need for managing compute infrastructure of
+unprecedented scale. The technology behind cloud in its current form is that of
+virtualization: ``curving'' multiple, virtual, machines out of a single host
+system, at will.
+
+Despite the changes brought about by the advent of cloud computing, the
+conventional slices of the software stack (the operating system being a stark
+example) have been minimally affected by it. Thus, this part of infrastructure
+is dominated by general-purpose OS's, like linux, carrying decades-old design
+decisions and legacy. This is undoubtedly an indication of the difficulty
+involved in their implementation, as well as the value contained in current
+systems, accumulated over a long series of improvements.
+
+A combination of factors makes it obvious that general-purpose operating systems
+are not the optimal solution for modern application requirements. These factors
+include the transition from physical to virtual machines, invalidating the
+assumption of exclusive ownership over the underlying hardware resources.
+Another contributing element is the rapid bridging of the gap between I/O and
+processing performance, rendering prohibitive the involvement of the OS in a
+high-performance application's data path, as backed by the growing popularity of
+frameworks like \cite{dpdk, spdk}. Finally, the large scale of the
+infrastructure at hand, as mentioned above, amplifies the need for optimized
+efficiency, since sub-optimum operation bears huge costs.
+
+Unikernels are a notable proposal for substituting conventional operating
+systems in guests, when those are used to run only a single application. Those
+result from merging an application with all supporting elements it requires
+(typically offered by an OS), in the form of libraries, in a common address
+space. The executable images produced are run as virtual machines, achieving
+higher efficiency due to their reduced size (thus faster transport and startup
+\cite{jitsu}, as well as lower storage space requirements), lower memory
+requirements and more performant system operations, e.g. due to the elimination
+of mode switches and a simplified security model.
+
+\subsection{Why shared file system and \viofs{}}
+
+Typically, file systems are local, implemented over block devices, inside an
+operating system kernel. There are cases though which benefit from sharing a
+common file system across several machines. One such case is that of
+virtualization, where host and guest share a file system (usually one
+pre-existing on the host). One example of how useful this can be are virtual
+machines that get reconfigured by the host, while another one is found in
+short-lived virtual machines which read input or configuration data and write
+output data to a common file system.
+
+Virtio-fs is a recent effort in the field of shared file systems, the first one
+built to target virtualization environments exclusively. This specialization
+allows it to have no dependency on network protocols or (virtual) network
+infrastructure, resulting in lower requirements for a guest utilizing it, in
+addition to improved performance and local file system semantics
+\cite{virtiofs-website}. What plays an important role in achieving these
+is the use of a shared memory area between the host and the guest, where file
+contents are mapped, the so called DAX (Direct Access) window.
+
+\section{Goals}
+
+This work aims to explore the possibilities offered by \viofs{} in a unikernel
+context. Specifically, we choose \osv{} and extend its existing, elementary
+\viofs{} implementation by adding read-only support for the DAX window as well
+as support for booting off of a \viofs{} file system. These render its use
+practical across a multitude of cases. Moreover, we evaluate our
+implementation's performance compared to that of an array of other file systems,
+in various representative scenarios.
+
+Our goals though extend to non-technical ones, having to do with the free / open
+source model of software development. Since both projects involved use this
+model, we consider it an opportunity and a moral obligation for all of our work
+on \osv{} to be contributed back to the project. This way, other users may
+benefit from it, extending its value beyond the academic plain, while the
+respective project communities gain a new, active member.
+
+\section{Related work}
+
+In the years since the introduction of MirageOS \cite{mirageos}, a plethora of
+unikernel frameworks have made their appearance, forming a diverse ecosystem.
+Some of them, beyond \osv{} are RumpRun \cite{rumprun}, IncludeOS
+\cite{includeos}, HermitCore \cite{hermitcore}, and HermiTux \cite{hermitux},
+ukl \cite{ukl}, Toro \cite{toro} and Nanos \cite{nanos}.
+
+The main pre-existing alternative to \viofs{} is VirtFS \cite{virtfs} which is
+based on the 9P network protocol \cite{9p}. Virtio-fs is still a young project,
+under active development, so there are relatively few implementations available.
+On the host side, apart from its main implementation in \qemu{}
+\cite{virtiofs:qemu}, there exists a complete implementation of it in
+cloud-hypervisor \cite{cloud-hypervisor}, an alternative virtiofsd
+implementation named memfsd from the nabla containers community \cite{memfsd}
+and an implementation for firecracker \cite{firecracker} which has not been
+accepted by the project for now. On the guest side, apart from the reference
+implementation in linux \cite{virtiofs:linux}, there is an implementation
+in Toro (a Pascal unikernel) \cite{toro}, as well as another for Windows
+\cite{virtio-windows}.
+
+\section{Thesis structure}
+
+A thorough description of the technical background of this thesis, from cloud
+use cases to the supporting technologies of \viofs{} is included in the second
+chapter. The third chapter concerns the specifics of the implementation of our
+extensions to \osv{}, followed by its evaluation, describing the methodology and
+examining the results in the fourth chapter. Finally, the fifth chapter contains
+a brief review in addition to directions for future work.
